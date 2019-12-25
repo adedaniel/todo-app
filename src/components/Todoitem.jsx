@@ -15,9 +15,9 @@ export class Todoitem extends Component {
           <button
             className="btn btn-danger"
             style={{ float: "right", backgroundColor: "" }}
-            onClick={this.props.onremove.bind(this, this.props.todo.id)}
+            //onClick={this.props.onremove.bind(this, this.props.todo.id)}
             //OR
-            // onClick={() => this.props.onremove(this.props.todo.id)}
+            onClick={() => this.props.onremove(this.props.todo.id)}
           >
             X
           </button>

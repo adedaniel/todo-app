@@ -13,21 +13,22 @@ import Axios from "axios";
 //import Counters from "./components/counters";
 class App extends Component {
   componentDidMount() {
-    //alert("mounted");
-    Axios.get("https://jsonplaceholder.typicode.com/todos?_limit=5").then(
-      result => this.setState({ todolist: result.data })
-    );
-    this.setState({
-      todolist: [...this.state.todolist, this.state.newdo]
-    });
-  }
-  state = {
-    newdo: {
+    let newdo = {
       id: "",
       title: "",
       description: "",
       completed: false
-    },
+    };
+    //alert("mounted");
+    this.setState({
+      todolist: [...this.state.todolist, newdo]
+    });
+
+    Axios.get("https://jsonplaceholder.typicode.com/todos?_limit=5").then(
+      result => this.setState({ todolist: result.data })
+    );
+  }
+  state = {
     todolist: [
       // {
       //   id: uuid.v4(),
